@@ -18,5 +18,14 @@
   "homepage": "https://github.com/dmittryyyy/Project-Food#readme",
   "dependencies": {
     "json-server": "^0.17.0"
-  }
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-loader": "^3.1.0",
+    "style-loader": "^3.3.1",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "keywords": []
 }
