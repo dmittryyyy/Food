@@ -107,4 +107,4 @@ function calcForm() {
     getСonstitutionFormCalc('#age');
 }
 
-module.exports = calcForm;
+export default calcForm;

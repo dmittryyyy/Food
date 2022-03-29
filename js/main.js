@@ -1,20 +1,31 @@
-window.addEventListener("DOMContentLoaded", function() {
-    const tabs = require('./modules/tabs'),
-        modal = require('./modules/modal'),
-        forms = require('./modules/forms'),
-        slider = require('./modules/slider'),
-        cards = require('./modules/cards'),
-        calculating = require('./modules/calculating'),
-        timer = require('./modules/timer');
+import tabs from './modules/tabs';
+import modal from './modules/modal';
+import forms from './modules/forms';
+import slider from './modules/slider';
+import cards from './modules/cards';
+import calculating from './modules/calculating';
+import timer from './modules/timer';
+import {openModal} from './modules/modal';
+window.addEventListener("DOMContentLoaded", function () {
 
+    const modalTimer = setTimeout(() => openModal('.modal', modalTimer), 40000);
 
-    tabs();
-    modal();
-    forms();
-    slider();
+    tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
+    modal('[data-modal]', '.modal');
+    forms('form', modalTimer);
+    slider({
+        container: '.offer__slider',
+        slide: '.offer__slide',
+        nextArrow: '.offer__slider-next',
+        prevArrow: '.offer__slider-prev',
+        totalCounter: '#total',
+        currentCounter: '#current',
+        wrapper: '.offer__slider-wrapper',
+        field: '.offer__slider-inner'
+    });
     cards();
     calculating();
-    timer();
+    timer('.timer', '2022-04-29');
 });
 
 

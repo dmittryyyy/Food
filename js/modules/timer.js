@@ -1,6 +1,4 @@
-function timer() {
-    //Timer
-    let deadline = '2022-04-29';
+function timer(id, deadline) {
 
     function addZero(num) {
         if (num <= 9) {
@@ -31,7 +29,7 @@ function timer() {
             days = timer.querySelector('#days'),
             hours = timer.querySelector('#hours'),
             minutes = timer.querySelector('#minutes'),
-            seconds = timer.querySelector('#seconds');
+            seconds = timer.querySelector('#seconds'),
         timeInterval = setInterval(updateClock, 1000);
 
         updateClock();
@@ -50,7 +48,7 @@ function timer() {
         }
     }
 
-    setClock('.timer', deadline);
+    setClock(id, deadline);
 }
 
-module.exports = timer;
+export default timer;
