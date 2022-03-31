@@ -8,6 +8,8 @@
 #jshintrc
 .jshintrc
 
+bundle.js.LICENSE.txt
+
 # testing
 /coverage
 
