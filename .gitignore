@@ -1,26 +1,19 @@
-# See https://help.github.com/ignore-files/ for more about igniring files.
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
-
-#jshintrc
-.jshintrc
-
-bundle.js.LICENSE.txt
+.idea
 
 # testing
 /coverage
 
 # production
-/build
+build
+deploy
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.production.local
+.env.*
 
 npm-debug.log*
 yarn-debug.log*
