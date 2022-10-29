@@ -1,0 +1,17 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+a {
+  text-decoration: none;
+}
+
+body {
+   background-color: $color-white;
+}
+
+.page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
