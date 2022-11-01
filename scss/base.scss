@@ -6,12 +6,12 @@ a {
 }
 
 body {
-   background-color: $color-white;
+  background-color: $color-white;
+  color: $color-dark;
+  @include typo-make-sizes($typo-paragraph-base-sizes);
 }
 
 .page-container {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 

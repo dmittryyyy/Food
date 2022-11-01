@@ -3,77 +3,87 @@
 @use '../placeholders';
 
 .preview {
-    padding: 28px 0 100px 0;
-    position: relative;
-    &__life {
-        font-weight: bold;
-        font-size: 20px;
-        margin-left: 35px;
-        margin-top: 35px;
-    }
-}
-.bgc_blue {
+  @include grid-with-offset((small: 1, medium: 2, large: 2)) {
+    @include grid-columns-span((small: 3, medium: 6, large: 10));
+  }
+  position: relative;
+  padding-bottom: 32px;
+
+  &:before {
     position: absolute;
-    right: 0;
-    top: -155px;
-    width: 50vw;
-    height: 900px;
-    background: rgba(146, 242, 255, 0.15);
+    content: '';
+    bottom: 0;
+    top: 0;
+    right: -20%;
+    left: 0;
+    background: -moz-linear-gradient(to right,  rgba($color-white, 1) 30%, rgba($color-light-blue,0.24) 70%);
     z-index: -1;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 50%;
+    width: 300px;
+    height: 1px;
+    background-color: $color-dark;
+  }
 }
-.tabcontainer {
-    display: flex;
-    width: 1130px;
-    margin: 0 auto;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+
+.preview__wrapper {
+  @include grid-with-inner-context {
+    @include grid-columns-span((small: 3, medium: 6, large: 10));
+  }
+  display: flex;
+  padding: 24px 0;
+  gap: 0;
 }
-.tabcontent {
-    width: 850px;
-    position: relative;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    &__descr {
-        position: absolute;
-        top: 300px;
-        right: -177px;
-        width: 550px;
-        height: 359px;
-        background: rgba(251, 254, 93, 0.8);
-        padding: 50px;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 36px;
-        color: rgba(0, 0, 0, 0.7);
-    }
+
+.preview__cards {
+  @include grid-columns-span((large: 7));
 }
-.tabheader {
-    width: 280px;
-    padding: 35px 30px;
-    background-color: #fff;
-    h3 {
-        font-weight: bold;
-        font-size: 16px;
-    }
-    &__items {
-        margin-top: 35px;
-        padding-left: 26px;
-        border-left: 1px solid black;
-    }
-    &__item {
-        font-weight: bold;
-        font-size: 18px;
-        font-weight: 300;
-        margin-top: 10px;
-        color: rgba(0, 0, 0, 0.6);
-        cursor: pointer;
-        transition: 0.3s all;
-        &_active {
-            color: #000;
-            font-size: 22px;
-            font-weight: 700;
-        }
-    }
+
+.preview__card {
+  position: relative;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
+
+.preview__card-description {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  @include typo-make-sizes($typo-paragraph-lead-sizes);
+  max-width: 550px;
+  max-height: 359px;
+  background: rgba($color-light-yellow, 0.80);
+  padding: 32px;
+}
+
+.previev__list-wrapper {
+  @include grid-columns-span((large: 2));
+  background: $color-white;
+  justify-self: start;
+  padding: 24px;
+}
+
+.previev__list {
+  padding-left: 16px;
+  border-left: 1px solid $color-dark;
+}
+
+.previev__list-title {
+  margin-bottom: 32px;
+}
+
+.previev__list-item {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+

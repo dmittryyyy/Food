@@ -3,26 +3,76 @@
 @use '../placeholders';
 
 .footer {
-    min-height: 180px;
-    background-color: $color-dark;
-    padding: 45px 0 50px 0;
-    color: #fff;
-    .container {
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-    .subtitle {
-        font-size: 20px;
-    }
-    .link {
-        display: block;
-        margin-top: 15px;
-        font-size: 16px;
-        color: #fff;
-    }
-    .call {
-        text-align: right;
-    }
+  min-height: 180px;
+  background-color: $color-dark;
+  padding: 45px 0 50px 0;
+  color: #fff;
+}
+
+.footer__wrapper {
+  @include grid-container;
+  @include grid;
+}
+
+.footer__subtitle {
+  margin-bottom: 16px;
+}
+
+.footer__social {
+  @include grid-columns-span((small: 4, medium: 3, large: 4));
+  justify-self: center;
+
+  @include screen-small-up {
+    justify-self: center;
+  }
+
+  @include screen-medium-up {
+    justify-self: start;
+  }
+}
+
+.footer-icon {
+  @include grid-columns-span((small: 4, medium: 2, large: 4));
+  justify-self: center;
+  padding: 16px 0;
+  @include screen-small-up {
+    text-align: center;
+  }
+
+  @include screen-medium-up {
+    padding: 0;
+  }
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include screen-small-up {
+    text-align: center;
+  }
+
+  @include screen-medium-up {
+    text-align: left;
+  }
+}
+
+.footer__list-link {
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.footer__contacts {
+  @include grid-columns-span((small: 4, medium: 3, large: 4));
+  justify-self: center;
+
+  @include screen-small-up {
+    justify-self: center;
+  }
+
+  @include screen-medium-up {
+    justify-self: end;
+  }
 }

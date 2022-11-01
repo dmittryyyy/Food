@@ -3,45 +3,105 @@
 @use '../placeholders';
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 150px;
-    padding: 0 100px;
-    &__left-block {
-        display: flex;
-        justify-content: space-between;
-        min-width: 550px;
-    }
-    &__logo {
-        max-width: 170px;
-        img {
-            width: 100%;
-        }
-    }
-    &__links {
-        display: flex;
-        align-items: center;
-    }
-    &__link {
-        position: relative;
-        margin-right: 45px;
-        font-weight: bold;
-        font-size: 18px;
-        color: $color-dark;
-        &:after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 110%;
-            left: -5%;
-            bottom: -1px;
-            z-index: -1;
-            height: 8px;
-            background: $color-primary;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+  padding: 24px;
 }
+
+.header__wrapper {
+  @include grid-container;
+  @include grid;
+  align-items: center;
+}
+
+.header__left {
+  @include grid-columns-span((small: 4, medium: 5, large: 8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+
+  @include screen-small-up {
+    flex-direction: column;
+    justify-self: center;
+  }
+
+  @include screen-medium-up {
+    justify-self: start;
+  }
+
+  @include screen-large-up {
+    flex-direction: unset;
+    text-align: left;
+    justify-self: start;
+  }
+}
+
+.header__logo {
+  width: 170px;
+  height: 56px;
+  fill: red;
+}
+
+.header__links {
+  display: flex;
+  color: black;
+  flex-direction: column;
+
+  @include screen-small-up {
+    flex-direction: column;
+  }
+
+  @include screen-large-up {
+    flex-direction: unset;
+  }
+}
+
+.header__link {
+  position: relative;
+  margin-bottom: 16px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 6px;
+    background: rgb($color-primary, 0.44);
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    transition: .2s linear;
+  }
+
+  &:hover {
+    &:after {
+      background: $color-primary;
+      transition: .2s linear;
+    }
+  }
+
+  @include screen-small-up {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  @include screen-large-up {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+}
+
+.header__button {
+  @include grid-columns-span((small: 4, medium: 3, large: 4));
+  justify-self: center;
+
+  @include screen-small-up {
+    justify-self: center;
+  }
+
+  @include screen-large-up {
+    text-align: left;
+    justify-self: end;
+  }
+}
+

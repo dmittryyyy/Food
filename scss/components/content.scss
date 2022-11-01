@@ -1,0 +1,13 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+@use '../placeholders';
+
+.content {
+
+}
+
+.content__wrapper {
+  padding: 32px 0;
+  @include grid-container;
+  @include grid;
+}
