@@ -3,14 +3,14 @@ import polyfills from './polyfills';
 import { clickAutoBlur } from './normalizers';
 
 import {
-  MainController,
+  TabController,
 } from './controllers';
 
 polyfills();
 clickAutoBlur();
 
 const application = Application.start();
-application.register('main', MainController);
+application.register('tab', TabController);
 
 document.addEventListener('turbo:click', () => {
   document.body.classList.add('turbolinks--loading');

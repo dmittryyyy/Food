@@ -17,7 +17,7 @@
     right: -20%;
     left: 0;
     background: -moz-linear-gradient(to right,  rgba($color-white, 1) 30%, rgba($color-light-blue,0.24) 70%);
-    z-index: -1;
+    z-index: -2;
   }
 
   &:after {
@@ -35,9 +35,8 @@
   @include grid-with-inner-context {
     @include grid-columns-span((small: 3, medium: 6, large: 10));
   }
-  display: flex;
   padding: 24px 0;
-  gap: 0;
+  box-shadow: 0 4px 30px rgba(.10,.10,.10,0);
 }
 
 .preview__cards {
@@ -47,15 +46,30 @@
 .preview__card {
   position: relative;
   height: 100%;
+  display: none;
   img {
     width: 100%;
     height: 100%;
   }
 }
 
+.preview__card--show {
+  display: block;
+  animation: showTab .8s linear;
+}
+
+@keyframes showTab {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .preview__card-description {
   position: absolute;
-  bottom: -20%;
+  bottom: 10%;
   right: -10%;
   @include typo-make-sizes($typo-paragraph-lead-sizes);
   max-width: 550px;
@@ -65,10 +79,11 @@
 }
 
 .previev__list-wrapper {
-  @include grid-columns-span((large: 2));
+  @include grid-columns-span((large: 3));
   background: $color-white;
   justify-self: start;
   padding: 24px;
+  margin-left: -20px;
 }
 
 .previev__list {
@@ -77,13 +92,24 @@
 }
 
 .previev__list-title {
+  font-weight: 700;
   margin-bottom: 32px;
 }
 
 .previev__list-item {
+  cursor: pointer;
+  transition: .3s linear;
+  color: rgb($color-dark, 0.8);
+
   &:not(:last-child) {
     margin-bottom: 16px;
   }
+}
+
+.previev__list-item.active {
+  color: rgb($color-dark, 1);
+  transform: translate(15%);
+  font-weight: 600;
 }
 
 

@@ -1,1 +1,1 @@
-export { default as MainController } from './MainController';
+export { default as TabController } from './TabController';

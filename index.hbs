@@ -15,25 +15,54 @@
       </div>
     </div>
 
-    <div class="preview">
+    <div class="preview" data-controller="tab">
       <div class="preview__wrapper">
-        <div class="preview__cards">
-          <div class="preview__card">
-            <img  src="tabs/tab-1.jpg" alt="vegy">
+        <div class="preview__cards" data-tab-target="tabs">
+          <div class="preview__card preview__card--show">
+            <img src="tabs/tab-2.jpg" alt="vegy">
             <p class="preview__card-description">
               Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Для
               людей, которые интересуются спортом; активных и здоровых. Это абсолютно новый продукт с
               оптимальной ценой и высоким качеством!
             </p>
           </div>
+          <div class="preview__card">
+            <img src="tabs/tab-4.jpg" alt="vegy">
+            <p class="preview__card-description">
+              Меню “Премиум” - мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд.
+              Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!
+            </p>
+          </div>
+          <div class="preview__card">
+            <img src="tabs/tab-3.jpg" alt="vegy">
+            <p class="preview__card-description">
+              Наше специальное “Постное меню” - это тщательный подбор ингредиентов: полное отсутствие продуктов
+              животного происхождения. Полная гармония с собой и природой в каждом элементе! Все будет Ом!
+            </p>
+          </div>
+          <div class="preview__card">
+            <img src="tabs/tab-1.jpg" alt="vegy">
+            <p class="preview__card-description">
+              Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно
+              просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.
+            </p>
+          </div>
         </div>
         <div class="previev__list-wrapper">
           <h3 class="previev__list-title">Выберите стиль питания</h3>
-          <ul class="previev__list">
-            <li class="previev__list-item">Фитнес</li>
-            <li class="previev__list-item">Премиум</li>
-            <li class="previev__list-item">Постное</li>
-            <li class="previev__list-item">Сбалансированное</li>
+          <ul class="previev__list" data-tab-target="menu">
+            <li class="previev__list-item active">
+              <button data-tab-index="0" data-action="tab#showTab">Фитнес</button>
+            </li>
+            <li class="previev__list-item">
+              <button data-tab-index="1" data-action="tab#showTab">Премиум</button>
+            </li>
+            <li class="previev__list-item">
+              <button data-tab-index="2" data-action="tab#showTab">Постное</button>
+            </li>
+            <li class="previev__list-item">
+              <button data-tab-index="3" data-action="tab#showTab">Сбалансированное</button>
+            </li>
           </ul>
         </div>
       </div>
