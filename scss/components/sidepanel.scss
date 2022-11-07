@@ -3,7 +3,7 @@
 @use '../placeholders';
 
 .sidepanel {
-  @include grid-columns-span((small: 1, medium: 2, large: 2));
+  @include grid-columns-span((small: 1, medium: 1, large: 1));
   justify-self: start;
   height: 100vh;
   margin-top: 24px;

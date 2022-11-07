@@ -4,6 +4,7 @@ import { clickAutoBlur } from './normalizers';
 
 import {
   TabController,
+  SliderController,
 } from './controllers';
 
 polyfills();
@@ -11,6 +12,7 @@ clickAutoBlur();
 
 const application = Application.start();
 application.register('tab', TabController);
+application.register('slider', SliderController);
 
 document.addEventListener('turbo:click', () => {
   document.body.classList.add('turbolinks--loading');

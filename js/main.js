@@ -4,7 +4,7 @@ import 'nodelist-foreach-polyfill';
 import tabs from './modules/tabs';
 import modal from './modules/modal';
 import forms from './modules/forms';
-import slider from './modules/slider';
+import slider from './modules/sliderController';
 import cards from './modules/cards';
 import calculating from './modules/calculating';
 import timer from './modules/timer';
