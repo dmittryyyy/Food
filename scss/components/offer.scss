@@ -9,6 +9,8 @@
       @include grid-columns-span((small: 3, medium: 7, large: 11));
     }
   }
+  padding: 24px 0;
+  box-shadow: 0 4px 30px rgba(.10, .10, .10, 0);
   margin-bottom: 80px;
 
   &:before {
@@ -16,14 +18,12 @@
     left: -30%;
     z-index: -2;
   }
-}
 
-.offer__wrapper {
-  @include grid-with-inner-context {
-    @include grid-columns-span((small: 3, medium: 7, large: 11));
+  &:after {
+    @include grid-with-offset((large: 4)) {
+      @include grid-columns-span((large: 2));
+    }
   }
-  padding: 24px 0;
-  box-shadow: 0 4px 30px rgba(.10, .10, .10, 0);
 }
 
 .offer__top {

@@ -15,174 +15,172 @@
   </div>
 
   <div class="content__block preview" data-controller="tab">
-    <div class="preview__wrapper">
-      <div class="preview__cards" data-tab-target="tabs">
-        <div class="preview__card preview__card--show">
-          <img src="tabs/tab-2.jpg" alt="vegy">
-          <p class="preview__card-description">
-            Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Для
-            людей, которые интересуются спортом; активных и здоровых. Это абсолютно новый продукт с
-            оптимальной ценой и высоким качеством!
-          </p>
-        </div>
-        <div class="preview__card">
-          <img src="tabs/tab-4.jpg" alt="vegy">
-          <p class="preview__card-description">
-            Меню “Премиум” - мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд.
-            Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!
-          </p>
-        </div>
-        <div class="preview__card">
-          <img src="tabs/tab-3.jpg" alt="vegy">
-          <p class="preview__card-description">
-            Наше специальное “Постное меню” - это тщательный подбор ингредиентов: полное отсутствие продуктов
-            животного происхождения. Полная гармония с собой и природой в каждом элементе! Все будет Ом!
-          </p>
-        </div>
-        <div class="preview__card">
-          <img src="tabs/tab-1.jpg" alt="vegy">
-          <p class="preview__card-description">
-            Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно
-            просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.
-          </p>
-        </div>
+    <div class="preview__cards" data-tab-target="tabs">
+      <div class="preview__card preview__card--show">
+        <img src="tabs/tab-2.jpg" alt="vegy">
+        <p class="preview__card-description">
+          Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Для
+          людей, которые интересуются спортом; активных и здоровых. Это абсолютно новый продукт с
+          оптимальной ценой и высоким качеством!
+        </p>
       </div>
-      <div class="previev__list-wrapper">
-        <h3 class="previev__list-title">Выберите стиль питания</h3>
-        <ul class="previev__list" data-tab-target="menu">
-          <li class="previev__list-item active">
-            <button data-tab-index="0" data-action="tab#showTab">Фитнес</button>
-          </li>
-          <li class="previev__list-item">
-            <button data-tab-index="1" data-action="tab#showTab">Премиум</button>
-          </li>
-          <li class="previev__list-item">
-            <button data-tab-index="2" data-action="tab#showTab">Постное</button>
-          </li>
-          <li class="previev__list-item">
-            <button data-tab-index="3" data-action="tab#showTab">Сбалансированное</button>
-          </li>
-        </ul>
+      <div class="preview__card">
+        <img src="tabs/tab-4.jpg" alt="vegy">
+        <p class="preview__card-description">
+          Меню “Премиум” - мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд.
+          Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!
+        </p>
+        <span class="preview__note">Питайся полезно и вкусно!</span>
+      </div>
+      <div class="preview__card">
+        <img src="tabs/tab-3.jpg" alt="vegy">
+        <p class="preview__card-description">
+          Наше специальное “Постное меню” - это тщательный подбор ингредиентов: полное отсутствие продуктов
+          животного происхождения. Полная гармония с собой и природой в каждом элементе! Все будет Ом!
+        </p>
+      </div>
+      <div class="preview__card">
+        <img src="tabs/tab-1.jpg" alt="vegy">
+        <p class="preview__card-description">
+          Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно
+          просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.
+        </p>
+        <span class="preview__note">Живи полной жизнью!</span>
       </div>
     </div>
-    <span class="preview__note">Живи полной жизнью!</span>
+    <div class="previev__list-wrapper">
+      <h3 class="previev__list-title">Выберите стиль питания</h3>
+      <ul class="previev__list" data-tab-target="menu">
+        <li class="previev__list-item active">
+          <button data-tab-index="0" data-action="tab#showTab">Фитнес</button>
+        </li>
+        <li class="previev__list-item">
+          <button data-tab-index="1" data-action="tab#showTab">Премиум</button>
+        </li>
+        <li class="previev__list-item">
+          <button data-tab-index="2" data-action="tab#showTab">Постное</button>
+        </li>
+        <li class="previev__list-item">
+          <button data-tab-index="3" data-action="tab#showTab">Сбалансированное</button>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="content__block offer">
-    <div class="offer__wrapper">
-      <div class="offer__top">
-        <h2 class="offer__title">Что мы можем вам предложить?</h2>
-        <div class="offer__description">
-          <p class="offer__text">
-            Наша основная идея - это правильное питание. Оно может быть простым и вкусным. Мы не просто
-            доставка, мы сервис! Мы взяли на себя все расчеты БЖУ, калорийности, объемов порций и прочие важные,
-            но скучные аспекты. Вам остается только полезная, сытная и правильная еда, которую мы привозим прямо
-            под дверь.
-          </p>
-          <button data-modal class="button offer__button">Связаться с нами</button>
+    <div class="offer__top">
+      <h2 class="offer__title">Что мы можем вам предложить?</h2>
+      <div class="offer__description">
+        <p class="offer__text">
+          Наша основная идея - это правильное питание. Оно может быть простым и вкусным. Мы не просто
+          доставка, мы сервис! Мы взяли на себя все расчеты БЖУ, калорийности, объемов порций и прочие важные,
+          но скучные аспекты. Вам остается только полезная, сытная и правильная еда, которую мы привозим прямо
+          под дверь.
+        </p>
+        <div class="offer__button">
+          <button data-modal class="button">Связаться с нами</button>
         </div>
       </div>
-      <div class="offer__bottom">
-        <div class="offer__left">
-          <h2 class="offer__subtitle">Быстро и полезно</h2>
-          <p class="offer__description-text">
-            Готовка дома занимает много сил, времени и нервов. Мы привозим еду сразу на целый день, и ты можешь
-            действовать так, как тебе удобно, не подстраиваясь ни под кого и будучи уверенным в качестве
-            продукта!
-          </p>
-          <h2 class="offer__subtitle">Правильный рацион</h2>
-          <p class="offer__description-text">
-            Мы разработали специальное меню, где учтены все нюансы правильного питания, от баланса БЖУ до их
-            приготовления и дробления рациона.
-          </p>
+    </div>
+    <div class="offer__bottom">
+      <div class="offer__left">
+        <h2 class="offer__subtitle">Быстро и полезно</h2>
+        <p class="offer__description-text">
+          Готовка дома занимает много сил, времени и нервов. Мы привозим еду сразу на целый день, и ты можешь
+          действовать так, как тебе удобно, не подстраиваясь ни под кого и будучи уверенным в качестве
+          продукта!
+        </p>
+        <h2 class="offer__subtitle">Правильный рацион</h2>
+        <p class="offer__description-text">
+          Мы разработали специальное меню, где учтены все нюансы правильного питания, от баланса БЖУ до их
+          приготовления и дробления рациона.
+        </p>
+      </div>
+      <div class="offer__slider" data-controller="slider">
+        <div class="offer__slider-counter">
+          <button data-action="slider#prev">
+            <svg role="img" class="offer__slider-icon offer__slider-prev">
+              <use xlink:href="icons.svg#arrow"/>
+            </svg>
+          </button>
+          <span data-slider-target="current">1</span>
+          /
+          <span data-slider-target="total">2</span>
+          <button data-action="slider#next">
+            <svg role="img" class="offer__slider-icon offer__slider-next">
+              <use xlink:href="icons.svg#arrow"/>
+            </svg>
+          </button>
         </div>
-        <div class="offer__slider" data-controller="slider">
-          <div class="offer__slider-counter">
-            <button data-action="slider#prev">
-              <svg role="img" class="offer__slider-icon offer__slider-prev">
-                <use xlink:href="icons.svg#arrow"/>
-              </svg>
-            </button>
-            <span data-slider-target="current">1</span>
-            /
-            <span data-slider-target="total">2</span>
-            <button data-action="slider#next">
-              <svg role="img" class="offer__slider-icon offer__slider-next">
-                <use xlink:href="icons.svg#arrow"/>
-              </svg>
-            </button>
-          </div>
-          <div class="offer__slider-wrapper" data-slider-target="container">
-            <div class="offer__slider-row" data-slider-target="sliders">
-              <div class="offer__slide">
-                <img src="/slider/slide-2.jpg" alt="pepper">
-              </div>
-              <div class="offer__slide">
-                <img src="/slider/slide-1.jpg" alt="food">
-              </div>
-              <div class="offer__slide">
-                <img src="/slider/slide-4.jpg" alt="oil">
-              </div>
-              <div class="offer__slide">
-                <img src="/slider/slide-3.jpg" alt="paprika">
-              </div>
+        <div class="offer__slider-wrapper" data-slider-target="container">
+          <div class="offer__slider-row" data-slider-target="sliders">
+            <div class="offer__slide">
+              <img src="/slider/slide-2.jpg" alt="pepper">
+            </div>
+            <div class="offer__slide">
+              <img src="/slider/slide-1.jpg" alt="food">
+            </div>
+            <div class="offer__slide">
+              <img src="/slider/slide-4.jpg" alt="oil">
+            </div>
+            <div class="offer__slide">
+              <img src="/slider/slide-3.jpg" alt="paprika">
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="calculating content__block">
+    <h2 class="calculating___title">Рассчитаем вашу потребность в калориях?
+    </h2>
+
+    <div class="calculating__content">
+      <h3 class="calculating__subtitle">
+        Ваш пол
+      </h3>
+      <div class="calculating__buttons calculating__gender" id="gender">
+        <button id="female" class="calculating__button button button--green">Женщина</button>
+        <button id="male" class="calculating__button button button--green">Мужчина</button>
+      </div>
+
+      <div class="calculating__subtitle">
+        Ваша конституция
+      </div>
+      <div class="calculating__fields">
+        <input type="text" id="height" placeholder="Введите рост" class="calculating__field">
+        <input type="text" id="weight" placeholder="Введите вес" class="calculating__field">
+        <input type="text" id="age" placeholder="Введите возраст" class="calculating__field">
+      </div>
+
+      <h3 class="calculating__subtitle">
+        Выберите вашу физическую активность
+      </h3>
+
+      <div class="calculating__buttons">
+        <button data-activity="1.2" id="low" class="calculating__button button button--green">Низкая активность
+        </button>
+        <button data-activity="1.375" id="small" class="calculating__button button button--green">
+          Невысокая
+          активность
+        </button>
+        <button data-activity="1.55" id="medium" class="calculating__button button button--green">Умеренная
+          активность
+        </button>
+        <button data-activity="1.725" id="high" class="calculating__button button button--green">Высокая активность
+        </button>
+      </div>
+
+      <div class="calculating__result">
+        <h3 class="calculating__subtitle">
+          Ваша суточная норма калорий:
+        </h3>
+        <h2 class="calculating__total">2700 <span>ккал</span></h2>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<!--    <div class="divider"></div>-->
-
-<!--    <div class="calculating">-->
-<!--        <div class="container">-->
-<!--            <h2 class="title">Рассчитаем вашу потребность в калориях?-->
-<!--            </h2>-->
-<!--            <div class="calculating__field">-->
-<!--                <div class="calculating__subtitle">-->
-<!--                    Ваш пол-->
-<!--                </div>-->
-<!--                <div class="calculating__choose" id="gender">-->
-<!--                    <div id="female" class="calculating__choose-item calculating__choose-item_active">Женщина</div>-->
-<!--                    <div id="male" class="calculating__choose-item">Мужчина</div>-->
-<!--                </div>-->
-
-<!--                <div class="calculating__subtitle">-->
-<!--                    Ваша конституция-->
-<!--                </div>-->
-<!--                <div class="calculating__choose calculating__choose_medium">-->
-<!--                    <input type="text" id="height" placeholder="Введите рост" class="calculating__choose-item">-->
-<!--                    <input type="text" id="weight" placeholder="Введите вес" class="calculating__choose-item">-->
-<!--                    <input type="text" id="age" placeholder="Введите возраст" class="calculating__choose-item">-->
-<!--                </div>-->
-
-<!--                <div class="calculating__subtitle">-->
-<!--                    Выберите вашу физическая активность-->
-<!--                </div>-->
-<!--                <div class="calculating__choose calculating__choose_big">-->
-<!--                    <div data-activity="1.2" id="low" class="calculating__choose-item">Низкая активность </div>-->
-<!--                    <div data-activity="1.375" id="small" class="calculating__choose-item calculating__choose-item_active">Невысокая-->
-<!--                        активность</div>-->
-<!--                    <div data-activity="1.55" id="medium" class="calculating__choose-item">Умеренная активность</div>-->
-<!--                    <div data-activity="1.725" id="high" class="calculating__choose-item">Высокая активность</div>-->
-<!--                </div>-->
-
-<!--                <div class="calculating__divider"></div>-->
-
-<!--                <div class="calculating__total">-->
-<!--                    <div class="calculating__subtitle">-->
-<!--                        Ваша суточная норма калорий:-->
-<!--                    </div>-->
-<!--                    <div class="calculating__result">-->
-<!--                        <span>2700</span> ккал-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 
 <!--    <div class="divider"></div>-->
 

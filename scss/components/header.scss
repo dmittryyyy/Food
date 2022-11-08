@@ -63,7 +63,7 @@
     content: "";
     position: absolute;
     height: 6px;
-    background: rgb($color-primary, 0.44);
+    background: rgb($color-green, 0.44);
     bottom: 4px;
     left: 0;
     width: 100%;
@@ -73,7 +73,7 @@
 
   &:hover {
     &:after {
-      background: $color-primary;
+      background: $color-green;
       transition: .2s linear;
     }
   }
