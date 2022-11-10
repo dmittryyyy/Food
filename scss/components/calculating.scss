@@ -1,6 +1,5 @@
 @use '../mixins' as *;
 @use '../variables' as *;
-@use '../placeholders';
 
 .calculating {
   position: relative;
@@ -63,29 +62,20 @@
   }
 }
 
+.calculating__button.active {
+  color: $color-white;
+  background: $color-green;
+  border-color: transparent;
+}
+
 .calculating__fields {
   @include grid-columns-span((small: 3, medium: 7, large: 10));
   justify-self: center;
   margin-bottom: 32px;
   display: flex;
   gap: 0;
-}
 
-.calculating__field {
-  @include typo-make-sizes($typo-paragraph-small-sizes);
-  align-items: center;
-  justify-content: center;
-  width: 170px;
-  height: 50px;
-  padding: 0 10px;
-  background: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,.2);
-  border: none;
-  text-align: center;
-  outline: 0;
-  transition: .3s all;
-
-  &:not(:last-child) {
+  .input-field:not(:last-child) {
     margin-right: 32px;
   }
 }

@@ -131,7 +131,8 @@
       </div>
     </div>
   </div>
-  <div class="calculating content__block">
+
+  <div class="calculating content__block" data-controller="calculate">
     <h2 class="calculating___title">Рассчитаем вашу потребность в калориях?
     </h2>
 
@@ -139,35 +140,44 @@
       <h3 class="calculating__subtitle">
         Ваш пол
       </h3>
-      <div class="calculating__buttons calculating__gender" id="gender">
-        <button id="female" class="calculating__button button button--green">Женщина</button>
-        <button id="male" class="calculating__button button button--green">Мужчина</button>
+      <div class="calculating__buttons calculating__gender" data-calculate-target="gender">
+        <button data-gender="female" class="calculating__button button button--white">Женщина</button>
+        <button data-gender="male" class="calculating__button button button--white">Мужчина</button>
       </div>
 
       <div class="calculating__subtitle">
         Ваша конституция
       </div>
       <div class="calculating__fields">
-        <input type="text" id="height" placeholder="Введите рост" class="calculating__field">
-        <input type="text" id="weight" placeholder="Введите вес" class="calculating__field">
-        <input type="text" id="age" placeholder="Введите возраст" class="calculating__field">
+        <div class="input-field text-field_floating">
+          <input class="input-field__input" type="number" placeholder="">
+          <label class="input-field__label" data-calculate-target="height">Введите рост</label>
+        </div>
+        <div class="input-field text-field_floating">
+          <input class="input-field__input" type="number" placeholder="">
+          <label class="input-field__label" data-calculate-target="weight">Введите вес</label>
+        </div>
+        <div class="input-field text-field_floating">
+          <input class="input-field__input" type="number" placeholder="">
+          <label class="input-field__label" data-calculate-target="age">Введите возраст</label>
+        </div>
       </div>
 
       <h3 class="calculating__subtitle">
         Выберите вашу физическую активность
       </h3>
 
-      <div class="calculating__buttons">
-        <button data-activity="1.2" id="low" class="calculating__button button button--green">Низкая активность
+      <div class="calculating__buttons" data-calculate-target="activity">
+        <button data-activity="1.2" id="low" class="calculating__button button button--white">Низкая активность
         </button>
-        <button data-activity="1.375" id="small" class="calculating__button button button--green">
+        <button data-activity="1.375" id="small" class="calculating__button button button--white">
           Невысокая
           активность
         </button>
-        <button data-activity="1.55" id="medium" class="calculating__button button button--green">Умеренная
+        <button data-activity="1.55" id="medium" class="calculating__button button button--white">Умеренная
           активность
         </button>
-        <button data-activity="1.725" id="high" class="calculating__button button button--green">Высокая активность
+        <button data-activity="1.725" id="high" class="calculating__button button button--white">Высокая активность
         </button>
       </div>
 
@@ -175,7 +185,7 @@
         <h3 class="calculating__subtitle">
           Ваша суточная норма калорий:
         </h3>
-        <h2 class="calculating__total">2700 <span>ккал</span></h2>
+        <h2 class="calculating__total" data-calculate-target="result">2700</h2><span>ккал</span>
       </div>
     </div>
   </div>
