@@ -16,7 +16,7 @@
 
   <div class="content__block preview" data-controller="tab">
     <div class="preview__cards" data-tab-target="tabs">
-      <div class="preview__card preview__card--show">
+      <div class="preview__card show">
         <img src="tabs/tab-2.jpg" alt="vegy">
         <p class="preview__card-description">
           Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Для
@@ -48,20 +48,19 @@
         <span class="preview__note">Живи полной жизнью!</span>
       </div>
     </div>
-    <div class="previev__list-wrapper">
-      <h3 class="previev__list-title">Выберите стиль питания</h3>
-      <ul class="previev__list" data-tab-target="menu">
-        <li class="previev__list-item active">
-          <button data-tab-index="0" data-action="tab#showTab">Фитнес</button>
+    <div class="preview__list-wrapper">
+      <h3 class="preview__list-title">Выберите стиль питания</h3>
+      <ul class="preview__list" data-tab-target="menu">
+        <li class="preview__list-item active" data-tab-index="0">
+          Фитнес
+        <li class="preview__list-item" data-tab-index="1">
+          Премиум
         </li>
-        <li class="previev__list-item">
-          <button data-tab-index="1" data-action="tab#showTab">Премиум</button>
+        <li class="preview__list-item" data-tab-index="2">
+          Постное
         </li>
-        <li class="previev__list-item">
-          <button data-tab-index="2" data-action="tab#showTab">Постное</button>
-        </li>
-        <li class="previev__list-item">
-          <button data-tab-index="3" data-action="tab#showTab">Сбалансированное</button>
+        <li class="preview__list-item" data-tab-index="3">
+          Сбалансированное
         </li>
       </ul>
     </div>
@@ -142,6 +141,9 @@
       </h3>
       <div class="calculating__buttons calculating__gender" data-calculate-target="gender">
         <button data-gender="female" class="calculating__button button button--white">Женщина</button>
+        <svg role="img" class="gender-icon">
+          <use xlink:href="icons.svg#switch"/>
+        </svg>
         <button data-gender="male" class="calculating__button button button--white">Мужчина</button>
       </div>
 
@@ -150,16 +152,16 @@
       </div>
       <div class="calculating__fields">
         <div class="input-field text-field_floating">
-          <input class="input-field__input" type="number" placeholder="">
-          <label class="input-field__label" data-calculate-target="height">Введите рост</label>
+          <input class="input-field__input" data-calculate-target="height" placeholder="">
+          <label class="input-field__label">Введите рост</label>
         </div>
         <div class="input-field text-field_floating">
-          <input class="input-field__input" type="number" placeholder="">
-          <label class="input-field__label" data-calculate-target="weight">Введите вес</label>
+          <input class="input-field__input" data-calculate-target="weight" placeholder="">
+          <label class="input-field__label">Введите вес</label>
         </div>
         <div class="input-field text-field_floating">
-          <input class="input-field__input" type="number" placeholder="">
-          <label class="input-field__label" data-calculate-target="age">Введите возраст</label>
+          <input class="input-field__input" data-calculate-target="age" placeholder="">
+          <label class="input-field__label">Введите возраст</label>
         </div>
       </div>
 

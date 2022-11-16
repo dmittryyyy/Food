@@ -2,73 +2,65 @@
 @use '../variables' as *;
 @use '../placeholders';
 
-.input-field__label {
-  display: block;
-  color: $color-dark;
+.input-field {
+  position: relative;
+  min-height: 64px;
+
+  textarea.input-field__input {
+    padding-top: 24px;
+    + .input-field__label {
+      padding-top: 24px;
+      align-items: flex-start;
+    }
+  }
 }
 
 .input-field__input {
-  display: block;
   height: 64px;
   width: 100%;
-  // TODO: add linear interpolation variable 20px
-  padding: 24px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 2px;
+  border-radius: 12px;
   background: $color-white;
+  padding-left: 24px;
+  border: none;
 }
 
 .input-field__input:focus {
   color: $color-dark;
-  border: 1px solid rgb($color-dark, .2);
   outline: 0;
-  padding-bottom: 12px;
 }
 
-/* with floating label */
-.text-field_floating {
-  position: relative;
-}
-
-.text-field_floating .input-field__input {
-  border: none;
-  height: 64px;
-}
-
-.text-field_floating .input-field__label {
+.input-field__label {
   position: absolute;
-  // TODO: add linear interpolation variable 20px
-  top: 24px;
+  display: flex;
+  align-items: center;
+  top: 0;
   left: 24px;
   height: 100%;
   pointer-events: none;
   transform-origin: 0 0;
-  transition: color .15s ease-in-out, transform .15s ease-in-out;
+  transition: transform .15s ease-in-out;
   color: rgb($color-dark, 0.4);
 }
 
-.text-field_floating .input-field__input::-moz-placeholder {
+.input-field .input-field__input::-moz-placeholder {
   color: transparent;
 }
 
-.text-field_floating .input-field__input::placeholder {
+.input-field .input-field__input::placeholder {
   color: transparent;
 }
 
-.text-field_floating .input-field__input:focus,
-.text-field_floating .input-field__input:not(:placeholder-shown) {
-  // TODO: add linear interpolation variable 20px
-  padding-top: 24px;
-  padding-bottom: 8px;
-  border: 1px solid rgb($color-dark, .2);
+.input-field .input-field__input:focus,
+.input-field .input-field__input:not(:placeholder-shown) {
   background: $color-white;
 }
 
-.text-field_floating .input-field__input:focus~.input-field__label,
-.text-field_floating .input-field__input:not(:placeholder-shown)~.input-field__label {
-  transform: scale(.9) translateY(-9px);
-  color: rgb($color-dark, 0.56);
-  @include typo-make-sizes($typo-paragraph-small-sizes);
+.input-field .input-field__input:focus ~ .input-field__label,
+.input-field .input-field__input:not(:placeholder-shown) ~ .input-field__label {
+  transform: scale(.6) translateY(-9px);
 }
+
+

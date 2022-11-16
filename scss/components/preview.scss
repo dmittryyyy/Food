@@ -41,7 +41,7 @@
   }
 }
 
-.preview__card--show {
+.show {
   display: block;
   animation: showTab .8s linear;
 }
@@ -66,7 +66,7 @@
   padding: 32px;
 }
 
-.previev__list-wrapper {
+.preview__list-wrapper {
   @include grid-columns-span((large: 3));
   width: 100%;
   background: $color-white;
@@ -75,17 +75,17 @@
   margin-left: -20px;
 }
 
-.previev__list {
+.preview__list {
   padding-left: 16px;
   border-left: 1px solid $color-dark;
 }
 
-.previev__list-title {
+.preview__list-title {
   font-weight: 700;
   margin-bottom: 32px;
 }
 
-.previev__list-item {
+.preview__list-item {
   cursor: pointer;
   transition: .3s linear;
   color: rgb($color-dark, 0.8);
@@ -95,7 +95,7 @@
   }
 }
 
-.previev__list-item.active {
+.preview__list-item.active {
   color: rgb($color-dark, 1);
   transform: translate(15%);
   font-weight: 600;

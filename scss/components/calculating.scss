@@ -86,16 +86,15 @@
   .calculating__button {
     margin: 0;
   }
+}
 
-  &:after {
-    content: '';
-    position: absolute;
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-    width: 16px;
-    height: 16px;
-    background: url('/images/switch.svg') center center/cover no-repeat;
-  }
+.gender-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
 }
 
 .calculating__result {

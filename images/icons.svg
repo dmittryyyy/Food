@@ -109,4 +109,12 @@
       <path d="M17.3205 -3.02842e-06L17.3205 4.25L7.43094e-07 4.25L8.32056 1.75L17.3205 -3.02842e-06Z" fill="black"/>
     </svg>
   </symbol>
+  <symbol id="switch" viewBox="0 0 16 16">
+    <svg>
+      <path d="M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z"
+            fill="white" stroke="black" stroke-opacity="0.5"/>
+      <path d="M5 8L7.25 4.5359L7.25 11.4641L5 8Z" fill="black" fill-opacity="0.5"/>
+      <path d="M11 8L8.75 11.4641L8.75 4.5359L11 8Z" fill="black" fill-opacity="0.5"/>
+    </svg>
+  </symbol>
 </svg>

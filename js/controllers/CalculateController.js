@@ -1,5 +1,4 @@
 import { Controller } from 'stimulus';
-import calculating from './calculating';
 
 export default class CalculateController extends Controller {
   static targets = ['result', 'gender', 'weight', 'height', 'age', 'activity'];
@@ -12,9 +11,15 @@ export default class CalculateController extends Controller {
 
   buttonsGender = this.genderTarget.querySelectorAll('.calculating__button');
   buttonsActivity = this.activityTarget.querySelectorAll('.calculating__button');
+  inputs = document.querySelectorAll('.input-field__input');
 
   connect() {
     this.resultTarget.innerHTML = '____';
+    this.inputs.forEach((input) => {
+      input.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^\d.]/g, '');
+      })
+    });
     this.buttonsGender.forEach((button) => {
       button.addEventListener('click', this.selectedGender);
     });
@@ -24,6 +29,11 @@ export default class CalculateController extends Controller {
   }
 
   disconnect() {
+    this.inputs.forEach((input) => {
+      input.removeEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^\d.]/g, '');
+      })
+    });
     this.buttonsGender.forEach((button) => {
       button.removeEventListener('click', this.selectedGender);
     });
@@ -35,22 +45,23 @@ export default class CalculateController extends Controller {
   selectedGender = (e) => {
     this.buttonsGender.forEach((item) => {
       item.classList.remove('active');
-    })
+    });
     e.target.classList.add('active');
     this.selectGender = e.target;
-  }
+  };
 
   selectedActivity = (e) => {
     this.buttonsActivity.forEach((item) => {
       item.classList.remove('active');
-    })
+    });
     e.target.classList.add('active');
     this.selectActivity = e.target;
 
     this.calculate(this.selectGender, this.selectActivity);
-  }
+  };
 
   calculate = (gender, activity) => {
+    console.log(this.ageTarget.innerHTML);
     let genderId = gender.getAttribute('data-gender');
     let activityId = activity.getAttribute('data-activity');
     if (genderId === 'female') {
