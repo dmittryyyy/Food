@@ -11,7 +11,7 @@ export default class CalculateController extends Controller {
 
   buttonsGender = this.genderTarget.querySelectorAll('.calculating__button');
   buttonsActivity = this.activityTarget.querySelectorAll('.calculating__button');
-  inputs = document.querySelectorAll('.input-field__input');
+  inputs = this.element.querySelectorAll('.input-field__input');
 
   connect() {
     this.resultTarget.innerHTML = '____';

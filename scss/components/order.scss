@@ -3,29 +3,55 @@
 @use '../placeholders';
 
 .order {
-    padding-bottom: 80px;
-    .title {
-        text-align: center;
+  position: relative;
+  @include grid-with-offset((small: 1, medium: 1, large: 1)) {
+    @include grid-with-inner-context {
+      @include grid-columns-span((small: 3, medium: 7, large: 10));
     }
-    &__form {
-        margin-top: 70px;
-        padding: 0 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        img {
-            transform: scale(1.5);
-        }
+    padding: 24px 0;
+    margin-bottom: 80px;
+  }
+
+  &:before {
+    background: -moz-linear-gradient(rgba($color-white, 1) 30%, rgba($color-green, 0.12) 70%);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+
+  &:after {
+    @include grid-with-offset((large: 4)) {
+      @include grid-columns-span((large: 2));
     }
-    &__input {
-        width: 280px;
-        height: 50px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-        border: none;
-        font-size: 18px;
-        text-align: center;
-        padding: 0 20px;
-        outline: none;
-    }
+  }
+}
+
+.order__title {
+  @include grid-columns-span((small: 3, medium: 7, large: 10));
+  @include typo-make-sizes($typo-h2-sizes);
+  justify-self: center;
+  margin-bottom: 32px;
+}
+
+.order__form {
+  @include grid-columns-span((small: 3, medium: 7, large: 10));
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.order__form__input {
+
+  .input-field__input {
+    border: 1px solid $color-dark;
+  }
+}
+
+.form__arrow {
+  width: 64px;
+  height: 64px;
+  transform: rotate(180deg);
 }

@@ -6,6 +6,7 @@ import {
   TabController,
   SliderController,
   CalculateController,
+  ModalController,
 } from './controllers';
 
 polyfills();
@@ -15,6 +16,7 @@ const application = Application.start();
 application.register('tab', TabController);
 application.register('slider', SliderController);
 application.register('calculate', CalculateController);
+application.register('modal', ModalController);
 
 document.addEventListener('turbo:click', () => {
   document.body.classList.add('turbolinks--loading');

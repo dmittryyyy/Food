@@ -2,19 +2,19 @@ require('es6-promise').polyfill();
 import 'nodelist-foreach-polyfill';
 
 import tabs from './modules/tabs';
-import modal from './modules/modal';
+import modal from './modules/modalController';
 import forms from './modules/forms';
 import slider from './modules/sliderController';
 import cards from './modules/cards';
 import calculating from './modules/calculating';
 import timer from './modules/timer';
-import {openModal} from './modules/modal';
+import {openModal} from './modules/modalController';
 window.addEventListener("DOMContentLoaded", function () {
 
-    const modalTimer = setTimeout(() => openModal('.modal', modalTimer), 40000);
+    const modalTimer = setTimeout(() => openModal('.modalController', modalTimer), 40000);
 
     tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
-    modal('[data-modal]', '.modal');
+    modal('[data-modalController]', '.modalController');
     forms('form', modalTimer);
     slider({
         container: '.offer__slider',

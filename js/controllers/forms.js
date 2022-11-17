@@ -1,4 +1,4 @@
-import { closeModal, openModal } from './modal';
+import { closeModal, openModal } from './ModalController';
 import { postData } from '../services/services';
 
 function form(formSelector, modalTimer) {
@@ -47,7 +47,7 @@ function form(formSelector, modalTimer) {
         const prevModalDialog = document.querySelector('.modal__dialog');
 
         prevModalDialog.classList.add('hide');
-        openModal('.modal', modalTimer);
+        openModal('.modalController', modalTimer);
 
         const thanksModal = document.createElement('div');
         thanksModal.classList.add('.modal__dialog');
@@ -58,12 +58,12 @@ function form(formSelector, modalTimer) {
         </div>
         `;
 
-        document.querySelector('.modal').append(thanksModal);
+        document.querySelector('.modalController').append(thanksModal);
         setTimeout(() => {
             thanksModal.remove();
             prevModalDialog.classList.add('show');
             prevModalDialog.classList.remove('hide');
-            closeModal('.modal');
+            closeModal('.modalController');
         }, 5000);
     }
 

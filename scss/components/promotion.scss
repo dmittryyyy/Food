@@ -3,60 +3,68 @@
 @use '../placeholders';
 
 .promotion {
-    padding: 70px 0 240px 0;
-    position: relative;
-    .container {
-        display: flex;
+  position: relative;
+  @include grid-with-offset((small: 1, medium: 1, large: 1)) {
+    @include grid-with-inner-context {
+      @include grid-columns-span((small: 3, medium: 7, large: 11));
     }
-    .bgc_y {
-        position: absolute;
-        width: 50%;
-        height: 499px;
-        background: rgba(243, 255, 222, 0.35);
-        z-index: -1;
-        top: -50px;
-        left: 0;
+    padding: 24px 0;
+    margin-bottom: 80px;
+  }
+
+  &:before {
+    background: -moz-linear-gradient(to right, rgba($color-light-yellow, 0.24) 40%, rgba($color-green, 0.12) 60%);
+    left: -20%;
+    right: -20%;
+    z-index: -2;
+  }
+
+  &:after {
+    @include grid-with-offset((large: 4)) {
+      @include grid-columns-span((large: 2));
     }
-    &__text {
-        width: 50%;
-    }
-    &__descr {
-        margin-top: 40px;
-        font-size: 20px;
-        line-height: 24px;
-        font-weight: 300;
-        span {
-            font-weight: bold;
-            font-size: 26px;
-        }
-    }
-    &__timer {
-        width: 50%;
-        .title {
-            text-align: right;
-        }
-        .timer {
-            margin-top: 60px;
-            padding-left: 95px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            &__block {
-                width: 102px;
-                height: 120px;
-                background: #FFFFFF;
-                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-                font-size: 16px;
-                font-weight: 300;
-                text-align: center;
-                span {
-                    display: block;
-                    margin-top: 20px;
-                    margin-bottom: 5px;
-                    font-size: 56px;
-                    font-weight: bold;
-                }
-            }
-        }
-    }
+  }
+}
+
+.promotion__text {
+  @include grid-columns-span((small: 4, medium: 3, large: 4));
+}
+
+.promotion__title {
+  @include typo-make-sizes($typo-h2-sizes);
+  margin-bottom: 32px;
+}
+
+.promotion__description {
+
+  span {
+    font-weight: 700;
+    @include typo-make-sizes($typo-h3-sizes);
+  }
+}
+
+.promotion__timer-wrapper {
+  @include grid-with-offset((medium: 4, large: 7)) {
+    @include grid-columns-span((small: 3, large: 4));
+  }
+  margin-bottom: 32px;
+}
+
+.promotion__timer {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.promotion__timer-block {
+  background: $color-white;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+
+  span {
+    display: block;
+    @include typo-make-sizes($typo-h2-sizes);
+    font-weight: 700;
+  }
 }

@@ -17,7 +17,7 @@
 </head>
 
 <body data-controller="cursor">
-<div class="page__contaner">
+<div class="page__container" data-controller="modal">
 <header class="header">
   <div class="header__wrapper">
     <div class="header__left">
@@ -29,6 +29,6 @@
         <li class="header__link"><a href="#">Питание на вынос</a></li>
       </nav>
     </div>
-    <button class="button button--white header__button">Связаться с нами</button>
+    <button class="button button--white header__button" data-action="modal#open">Связаться с нами</button>
   </div>
 </header>

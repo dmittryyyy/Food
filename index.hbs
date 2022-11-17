@@ -77,7 +77,7 @@
           под дверь.
         </p>
         <div class="offer__button">
-          <button data-modal class="button">Связаться с нами</button>
+          <button data-modal class="button" data-action="modal#open">Связаться с нами</button>
         </div>
       </div>
     </div>
@@ -191,83 +191,87 @@
       </div>
     </div>
   </div>
+
+  <div class="menu content__block">
+    <h2 class="menu__title">Наше меню на день</h2>
+    <div class="menu__cards">
+      <div class="menu__card">
+        <img class="menu__card-photo" src="/tabs/tab-2.jpg" alt="Фото меню">
+        <h3 class="menu__card-title">Меню 'Фитнес'</h3>
+        <p class="menu__card-description">Меню 'Фитнес' - это новый подход к приготовлению блюд: больше свежих овощей и
+          фруктов.
+          Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!</p>
+        <span class="menu__card-price">350 р.</span>
+      </div>
+      <div class="menu__card">
+        <img class="menu__card-photo" src="/tabs/tab-1.jpg" alt="Фото меню">
+        <h3 class="menu__card-title">Меню 'Постное</h3>
+        <p class="menu__card-description">Меню 'Постное' - это тщательный подбор ингредиентов: полное отсутствие
+          продуктов животного происхождения,
+          молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных
+          вегетарианских стейков.</p>
+        <span class="menu__card-price">500 р.</span>
+      </div>
+      <div class="menu__card">
+        <img class="menu__card-photo" src="/tabs/tab-4.jpg" alt="Фото меню">
+        <h3 class="menu__card-title">Меню 'Премиум'</h3>
+        <p class="menu__card-description">В меню 'Премиум' мы используем не только красивый дизайн упаковки, но и
+          качественное исполнение блюд.
+          Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!</p>
+        <span class="menu__card-price">680 р.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="order content__block">
+    <div class="order__title">Заказывай пробный день прямо сейчас!</div>
+    <form action="#" class="order__form">
+      <div class="input-field text-field_floating order__form__input">
+        <input class="input-field__input" placeholder="">
+        <label class="input-field__label">Введите ваше имя</label>
+      </div>
+      <div class="input-field text-field_floating order__form__input">
+        <input class="input-field__input" placeholder="">
+        <label class="input-field__label">Введите ваш телефон</label>
+      </div>
+      <svg role="img" class="form__arrow">
+        <use xlink:href="icons.svg#arrow"/>
+      </svg>
+      <button class="button">Перезвонить мне</button>
+    </form>
+  </div>
+
+  <div class="promotion content__block">
+    <div class="promotion__text">
+      <div class="promotion__title">Акция для новых клиентов!</div>
+      <div class="promotion__description">
+        Мы ценим каждого клиента и предлагаем вам стать одним из них на очень выгодных условиях.
+        Каждому, кто закажет доставку питание на неделю, будет предоставлена скидка в размере
+        <span>20%!</span>
+      </div>
+    </div>
+    <div class="promotion__timer-wrapper">
+      <div class="promotion__title">Осталось до конца акции:</div>
+      <div class="promotion__timer">
+        <div class="promotion__timer-block">
+          <span id="days">12</span>
+          дней
+        </div>
+        <div class="promotion__timer-block">
+          <span id="hours">20</span>
+          часов
+        </div>
+        <div class="promotion__timer-block">
+          <span id="minutes">56</span>
+          минут
+        </div>
+        <div class="promotion__timer-block">
+          <span id="seconds">20</span>
+          секунд
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<!--    <div class="divider"></div>-->
-
-<!--    <div class="menu">-->
-<!--        <h2 class="title">Наше меню на день</h2>-->
-
-<!--        <div class="menu__field">-->
-<!--            <div class="container">-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="order">-->
-<!--        <div class="container">-->
-<!--            <div class="title">Заказывай пробный день прямо сейчас!</div>-->
-<!--            <form action="#" class="order__form">-->
-<!--                <input required placeholder="Ваше имя" name="name" type="text" class="order__input">-->
-<!--                <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="order__input">-->
-<!--                <img src="icons/right.svg" alt="right">-->
-<!--                <button class="btn btn_dark btn_min">Перезвонить мне</button>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="divider"></div>-->
-
-<!--    <div class="promotion">-->
-<!--        <div class="bgc_y"></div>-->
-<!--        <div class="container">-->
-<!--            <div class="promotion__text">-->
-<!--                <div class="title">Акция для новых клиентов!</div>-->
-<!--                <div class="promotion__descr">-->
-<!--                    Мы ценим каждого клиента и предлагаем вам стать одним из них на очень выгодных условиях.-->
-<!--                    Каждому, кто закажет доставку питание на неделю, будет предоставлена скидка в размере-->
-<!--                    <span>20%!</span>-->
-<!--                    <br><br>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="promotion__timer">-->
-<!--                <div class="title">Осталось до конца акции:</div>-->
-<!--                <div class="timer">-->
-<!--                    <div class="timer__block">-->
-<!--                        <span id="days">12</span>-->
-<!--                        дней-->
-<!--                    </div>-->
-<!--                    <div class="timer__block">-->
-<!--                        <span id="hours">20</span>-->
-<!--                        часов-->
-<!--                    </div>-->
-<!--                    <div class="timer__block">-->
-<!--                        <span id="minutes">56</span>-->
-<!--                        минут-->
-<!--                    </div>-->
-<!--                    <div class="timer__block">-->
-<!--                        <span id="seconds">20</span>-->
-<!--                        секунд-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="modal">-->
-<!--        <div class="modal__dialog">-->
-<!--            <div class="modal__content">-->
-<!--                <form action="#">-->
-<!--                    <div data-close class="modal__close">&times;</div>-->
-<!--                    <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>-->
-<!--                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">-->
-<!--                    <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">-->
-<!--                    <button class="btn btn_dark btn_min">Перезвонить мне</button>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 
 {{> partials/footer}}
