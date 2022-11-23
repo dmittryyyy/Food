@@ -57,6 +57,7 @@
 }
 
 .calculating__button {
+  transition: background-color .2s linear;
   &:not(:last-child) {
     margin-right: 44px;
   }

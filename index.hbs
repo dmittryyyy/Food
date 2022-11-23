@@ -4,12 +4,16 @@
     <div class="sidepanel__wrapper">
       <p class="sidepanel__text">Социальные сети</p>
       <div class="sidepanel__socials">
-        <svg role="img" class="sidepanel-icon">
-          <use xlink:href="icons.svg#inst"/>
-        </svg>
-        <svg role="img" class="sidepanel-icon">
-          <use xlink:href="icons.svg#facebook"/>
-        </svg>
+        <a class="sidepanel__link" href="#">
+          <svg role="img" class="sidepanel-icon icon-inst">
+            <use xlink:href="icons.svg#inst"/>
+          </svg>
+        </a>
+        <a class="sidepanel__link" href="#">
+          <svg role="img" class="sidepanel-icon icon-facebook">
+            <use xlink:href="icons.svg#facebook"/>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
@@ -96,15 +100,17 @@
         </p>
       </div>
       <div class="offer__slider" data-controller="slider">
-        <div class="offer__slider-counter">
+        <div class="offer__slider-counter-wrapper">
           <button data-action="slider#prev">
-            <svg role="img" class="offer__slider-icon offer__slider-prev">
+            <svg role="img" class="offer__slider-icon">
               <use xlink:href="icons.svg#arrow"/>
             </svg>
           </button>
-          <span data-slider-target="current">1</span>
-          /
-          <span data-slider-target="total">2</span>
+          <div class="offer__slider-counter">
+            <span data-slider-target="current">1</span>
+            /
+            <span data-slider-target="total">2</span>
+          </div>
           <button data-action="slider#next">
             <svg role="img" class="offer__slider-icon offer__slider-next">
               <use xlink:href="icons.svg#arrow"/>
@@ -170,16 +176,16 @@
       </h3>
 
       <div class="calculating__buttons" data-calculate-target="activity">
-        <button data-activity="1.2" id="low" class="calculating__button button button--white">Низкая активность
+        <button data-activity="1.2" class="calculating__button button button--white">Низкая активность
         </button>
-        <button data-activity="1.375" id="small" class="calculating__button button button--white">
+        <button data-activity="1.375" class="calculating__button button button--white">
           Невысокая
           активность
         </button>
-        <button data-activity="1.55" id="medium" class="calculating__button button button--white">Умеренная
+        <button data-activity="1.55" class="calculating__button button button--white">Умеренная
           активность
         </button>
-        <button data-activity="1.725" id="high" class="calculating__button button button--white">Высокая активность
+        <button data-activity="1.725" class="calculating__button button button--white">Высокая активность
         </button>
       </div>
 
@@ -250,23 +256,23 @@
         <span>20%!</span>
       </div>
     </div>
-    <div class="promotion__timer-wrapper">
+    <div class="promotion__timer-wrapper" data-controller="timer">
       <div class="promotion__title">Осталось до конца акции:</div>
       <div class="promotion__timer">
         <div class="promotion__timer-block">
-          <span id="days">12</span>
+          <span data-timer-target="days">00</span>
           дней
         </div>
         <div class="promotion__timer-block">
-          <span id="hours">20</span>
+          <span data-timer-target="hours">00</span>
           часов
         </div>
         <div class="promotion__timer-block">
-          <span id="minutes">56</span>
+          <span data-timer-target="minutes">00</span>
           минут
         </div>
         <div class="promotion__timer-block">
-          <span id="seconds">20</span>
+          <span data-timer-target="seconds">00</span>
           секунд
         </div>
       </div>

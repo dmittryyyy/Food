@@ -4,13 +4,16 @@
 
 .sidepanel {
   @include grid-columns-span((small: 1, medium: 1, large: 1));
-  justify-self: start;
-  height: 100vh;
-  margin-top: 24px;
+
+  @include screen-medium-up {
+    align-self: start;
+    position: sticky;
+    top: 16px;
+    z-index: 2;
+  }
 }
 
 .sidepanel__wrapper {
-  position: sticky;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,10 +30,38 @@
   transform: translateY(100%);
 }
 
+.sidepanel__link {
+  &:hover {
+    .icon-inst {
+      fill: $color-white;
+      background: #b349a0;
+    }
+
+    .icon-facebook {
+      background: #3f729b;
+    }
+  }
+}
+
 .sidepanel-icon {
   width: 64px;
   height: 64px;
   &:not(:last-child) {
     margin-bottom: 12px;
   }
+}
+
+.icon-inst {
+  fill: $color-dark;
+  padding: 4px;
+  border-radius: 25%;
+  transition: background-color .2s linear;
+}
+
+.icon-facebook {
+  padding: 4px;
+  fill: $color-white;
+  border-radius: 50%;
+  background: $color-dark;
+  transition: background-color .2s linear;
 }

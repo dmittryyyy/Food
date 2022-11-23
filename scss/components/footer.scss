@@ -3,15 +3,13 @@
 @use '../placeholders';
 
 .footer {
-  min-height: 180px;
-  background-color: $color-dark;
-  padding: 45px 0 50px 0;
-  color: $color-white;
-}
-
-.footer__wrapper {
   @include grid-container;
   @include grid;
+  min-height: 180px;
+  background-color: $color-dark;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: $color-white;
 }
 
 .footer__subtitle {
@@ -31,10 +29,19 @@
   }
 }
 
-.footer-icon {
+.footer__icon-wrapper {
+  position: relative;
   @include grid-columns-span((small: 4, medium: 2, large: 4));
   justify-self: center;
-  padding: 16px 0;
+  cursor: pointer;
+
+  &:hover {
+    .footer-icon-fire {
+      transform: translateY(-35px);
+      transition: transform .3s linear;
+    }
+  }
+
   @include screen-small-up {
     text-align: center;
   }
@@ -42,6 +49,21 @@
   @include screen-medium-up {
     padding: 0;
   }
+}
+
+.footer-icon-peper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 120px;
+}
+
+.footer-icon-fire {
+  fill: darkorange;
+  width: 120px;
+  height: 120px;
+  transition: transform .3s linear;
 }
 
 .footer__list {

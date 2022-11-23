@@ -89,6 +89,7 @@
   cursor: pointer;
   transition: .3s linear;
   color: rgb($color-dark, 0.8);
+  cursor: pointer;
 
   &:not(:last-child) {
     margin-bottom: 16px;

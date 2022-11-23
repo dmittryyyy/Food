@@ -61,7 +61,6 @@ export default class CalculateController extends Controller {
   };
 
   calculate = (gender, activity) => {
-    console.log(this.ageTarget.innerHTML);
     let genderId = gender.getAttribute('data-gender');
     let activityId = activity.getAttribute('data-activity');
     if (genderId === 'female') {
