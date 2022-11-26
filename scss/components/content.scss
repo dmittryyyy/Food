@@ -9,6 +9,13 @@
 }
 
 .content__block {
+  margin-bottom: 40px;
+  padding: 24px 0;
+
+  @include screen-medium-up {
+    margin-bottom: 80px;
+  }
+
   &:before {
     @extend %helper-full-size-pseudo-layer;
     background: -moz-linear-gradient(to right,  rgba($color-white, 20%), rgba($color-light-blue, 1) 80%);
@@ -22,5 +29,6 @@
     width: 300px;
     height: 1px;
     background-color: $color-dark;
+    justify-self: center;
   }
 }

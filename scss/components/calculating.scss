@@ -3,14 +3,13 @@
 
 .calculating {
   position: relative;
-  @include grid-with-offset((small: 1, medium: 1, large: 1)) {
+  @include grid-with-offset((medium: 1)) {
     @include grid-with-inner-context {
-      @include grid-columns-span((small: 3, medium: 7, large: 10));
+      @include grid-columns-span((small: 4, medium: 7, large: 10));
     }
   }
   padding: 24px 0;
   box-shadow: 0 4px 30px rgba(.10, .10, .10, 0);
-  margin-bottom: 80px;
 
   &:before {
     background: -moz-linear-gradient(to right, $color-white 20% $color-light-yellow 30%, rgba($color-light-blue, 1) 50%);
@@ -27,7 +26,7 @@
 }
 
 .calculating___title {
-  @include grid-columns-span((small: 3, medium: 7, large: 10));
+  @include grid-columns-span((small: 4, medium: 7, large: 10));
   @include typo-make-sizes($typo-h2-sizes);
   justify-self: center;
   margin-bottom: 64px;
@@ -35,31 +34,45 @@
 
 .calculating__content {
   @include grid-with-inner-context {
-    @include grid-columns-span((small: 3, medium: 7, large: 10));
+    @include grid-columns-span((small: 4, medium: 7, large: 10));
   }
   background: rgb($color-light-blue, 0.16);
-  padding: 24px 0;
+  padding: 24px;
 }
 
 .calculating__subtitle {
-  @include grid-columns-span((small: 3, medium: 7, large: 10));
+  @include grid-columns-span((small: 4, medium: 7, large: 10));
   @include typo-make-sizes($typo-h3-sizes);
   justify-self: center;
   margin-bottom: 32px;
 }
 
 .calculating__buttons {
-  @include grid-columns-span((small: 3, medium: 7, large: 10));
+  @include grid-columns-span((small: 4, medium: 7, large: 10));
   margin-bottom: 32px;
-  justify-self: center;
+  justify-content: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 0;
+
+  @include screen-medium-up {
+    flex-wrap: nowrap;
+  }
 }
 
 .calculating__button {
   transition: background-color .2s linear;
-  &:not(:last-child) {
-    margin-right: 44px;
+
+  @include screen-medium-up {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+
+  @include screen-large-up {
+    &:not(:last-child) {
+      margin-right: 44px;
+    }
   }
 }
 
@@ -70,14 +83,22 @@
 }
 
 .calculating__fields {
-  @include grid-columns-span((small: 3, medium: 7, large: 10));
-  justify-self: center;
+  @include grid-columns-span((small: 4, medium: 7, large: 10));
   margin-bottom: 32px;
   display: flex;
+  flex-direction: column;
   gap: 0;
 
   .input-field:not(:last-child) {
-    margin-right: 32px;
+    margin-bottom: 32px;
+  }
+
+  @include screen-medium-up {
+    flex-direction: row;
+    justify-self: center;
+    .input-field:not(:last-child) {
+      margin-right: 32px;
+    }
   }
 }
 
@@ -99,7 +120,7 @@
 }
 
 .calculating__result {
-  @include grid-columns-span((small: 3, medium: 7, large: 10));
+  @include grid-columns-span((small: 4, medium: 7, large: 10));
   @include typo-make-sizes($typo-h3-sizes);
   justify-self: center;
   display: flex;

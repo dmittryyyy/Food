@@ -19,10 +19,7 @@
 .footer__social {
   @include grid-columns-span((small: 4, medium: 3, large: 4));
   justify-self: center;
-
-  @include screen-small-up {
-    justify-self: center;
-  }
+  margin-bottom: 24px;
 
   @include screen-medium-up {
     justify-self: start;

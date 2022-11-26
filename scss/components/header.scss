@@ -13,7 +13,7 @@
 }
 
 .header__left {
-  @include grid-columns-span((small: 4, medium: 5, large: 8));
+  @include grid-columns-span((small: 2, medium: 5, large: 8));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +92,7 @@
 }
 
 .header__button {
-  @include grid-columns-span((small: 4, medium: 3, large: 4));
+  @include grid-columns-span((small: 2, medium: 3, large: 4));
   justify-self: center;
 
   @include screen-small-up {

@@ -3,9 +3,11 @@
 @use '../placeholders';
 
 .sidepanel {
-  @include grid-columns-span((small: 1, medium: 1, large: 1));
+  @include grid-columns-span((medium: 1, large: 1));
+  display: none;
 
   @include screen-medium-up {
+    display: block;
     align-self: start;
     position: sticky;
     top: 16px;
@@ -20,14 +22,22 @@
 }
 
 .sidepanel__text {
+  display: flex;
+  gap: 0;
   font-size: 14px;
-  transform: rotate(-90deg) translateX(-50px);
+  transform: rotate(-90deg) translateX(-65px);
+
+  p {
+    &:first-child {
+      padding-right: 6px;
+    }
+  }
 }
 
 .sidepanel__socials {
   display: flex;
   flex-direction: column;
-  transform: translateY(100%);
+  transform: translateY(80%);
 }
 
 .sidepanel__link {
@@ -46,6 +56,7 @@
 .sidepanel-icon {
   width: 64px;
   height: 64px;
+
   &:not(:last-child) {
     margin-bottom: 12px;
   }

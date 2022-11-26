@@ -3,14 +3,19 @@
 @use '../placeholders';
 
 .menu {
+  display: none;
   position: relative;
-  @include grid-with-offset((small: 1, medium: 1, large: 1)) {
-    @include grid-with-inner-context {
-      @include grid-columns-span((small: 3, medium: 7, large: 10));
-    }
-  }
   padding: 24px 0;
   margin-bottom: 80px;
+
+  @include screen-medium-up {
+    display: block;
+    @include grid-with-offset((medium: 1)) {
+      @include grid-with-inner-context {
+        @include grid-columns-span((small: 3, medium: 7, large: 10));
+      }
+    }
+  }
 
   &:before {
     background: -moz-linear-gradient(rgba($color-white, 1) 30%, rgba($color-light-yellow, 0.24) 70%);
@@ -29,7 +34,7 @@
 }
 
 .menu__title {
-  @include grid-columns-span((small: 3, medium: 7, large: 10));
+  @include grid-columns-span((small: 4, medium: 7, large: 10));
   @include typo-make-sizes($typo-h2-sizes);
   justify-self: center;
   margin-bottom: 32px;
@@ -39,6 +44,7 @@
   @include grid-columns-span((small: 3, medium: 7, large: 10));
   display: flex;
   justify-self: center;
+  gap: 0;
   margin-bottom: 64px;
 }
 
@@ -53,7 +59,11 @@
 
 .menu__card-photo {
   padding-bottom: 16px;
-  max-height: 220px;
+  height: 180px;
+
+  @include screen-large-up {
+    height: 220px;
+  }
 }
 
 .menu__card-title {
@@ -63,8 +73,13 @@
 }
 
 .menu__card-description {
+  @include typo-make-sizes($typo-paragraph-small-sizes);
   flex-grow: 1;
   padding: 0 16px 16px 16px;
+
+  @include screen-large-up {
+    @include typo-make-sizes($typo-paragraph-base-sizes);
+  }
 }
 
 .menu__card-price {

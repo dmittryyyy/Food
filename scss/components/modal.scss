@@ -8,12 +8,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding-top: 120px;
+  padding: 120px 24px 0px 24px;
   background-color: rgba($color-dark, .90);
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s linear;
   z-index: 2;
+
+  @include screen-medium-up {
+    padding: 120px 0 0 0;
+  }
 }
 
 .modal.open {
@@ -28,10 +32,14 @@
 
 .modal__content {
   position: relative;
-  padding: 40px;
+  padding: 42px 16px;
   background: $color-white;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 2px;
+
+  @include screen-medium-up {
+    padding: 64px 42px;
+  }
 }
 
 .modal__form {

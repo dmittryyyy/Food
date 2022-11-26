@@ -3,15 +3,13 @@
 @use '../placeholders';
 
 .preview {
-  @include grid-with-offset((small: 1, medium: 1, large: 1)) {
+  @include grid-with-offset((medium: 1)) {
     @include grid-with-inner-context {
-      @include grid-columns-span((small: 3, medium: 7, large: 11));
+      @include grid-columns-span((small: 4, medium: 7, large: 11));
     }
   }
   position: relative;
-  margin-bottom: 80px;
   box-shadow: 0 4px 30px rgba(.10,.10,.10,0);
-  padding: 24px 0;
 
   &:before {
     background: -moz-linear-gradient(to right,  rgba($color-white, 1) 30%, rgba($color-light-blue,0.24) 70%);
@@ -27,12 +25,13 @@
 }
 
 .preview__cards {
-  @include grid-columns-span((large: 8));
+  @include grid-columns-span((small: 4, medium: 5, large: 8));
 }
 
 .preview__card {
   position: relative;
   height: 100%;
+  min-height: 280px;
   display: none;
 
   img {
@@ -56,50 +55,126 @@
 }
 
 .preview__card-description {
-  position: absolute;
-  bottom: 10%;
-  right: -10%;
-  @include typo-make-sizes($typo-paragraph-lead-sizes);
-  max-width: 550px;
-  max-height: 359px;
-  background: rgba($color-light-yellow, 0.80);
-  padding: 32px;
+  position: inherit;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  @include typo-make-sizes($typo-paragraph-nav-sizes);
+  max-height: 150px;
+  background: rgba($color-light-yellow, .6);
+  padding: 8px;
+
+  @include screen-tiny-only {
+    background: rgba($color-light-yellow, 1);
+  }
+
+  @include screen-small-up {
+    position: absolute;
+  }
+
+  @include screen-medium-up {
+    bottom: 5%;
+    right: -5%;
+    max-height: 340px;
+    max-width: 550px;
+    padding: 32px;
+    @include typo-make-sizes($typo-paragraph-base-sizes);
+  }
+
+  @include screen-large-up {
+    bottom: 10%;
+    @include typo-make-sizes($typo-paragraph-lead-sizes);
+  }
 }
 
 .preview__list-wrapper {
-  @include grid-columns-span((large: 3));
+  @include grid-columns-span((small: 4, medium: 2, large: 3));
+  @include typo-make-sizes($typo-paragraph-base-sizes);
   width: 100%;
   background: $color-white;
-  justify-self: start;
-  padding: 24px;
-  margin-left: -20px;
+  padding: 16px;
+
+  @include screen-medium-up {
+    width: 110%;
+    margin-left: -20px;
+    padding: 24px;
+  }
+
+  @include screen-large-up {
+    width: 107%;
+    padding: 24px 24px 0 44px;
+  }
+}
+
+.preview__note {
+  display: none;
+
+  @include screen-medium-up {
+    display: block;
+  }
 }
 
 .preview__list {
-  padding-left: 16px;
-  border-left: 1px solid $color-dark;
+  display: flex;
+  gap: 0;
+  justify-content: space-between;
+
+  @include screen-tiny-only {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include  screen-medium-up {
+    display: block;
+    padding-left: 16px;
+    gap: inherit;
+    border-left: 1px solid $color-dark;
+  }
 }
 
 .preview__list-title {
   font-weight: 700;
   margin-bottom: 32px;
+  text-align: center;
+
+  @include screen-medium-up {
+    text-align: left;
+  }
 }
 
 .preview__list-item {
+  @include typo-make-sizes($typo-paragraph-nav-sizes);
   cursor: pointer;
   transition: .3s linear;
   color: rgb($color-dark, 0.8);
   cursor: pointer;
 
   &:not(:last-child) {
-    margin-bottom: 16px;
+    margin-right: 12px;
+  }
+
+  @include screen-tiny-only {
+    &:last-child {
+      margin-top: 12px;
+    }
+  }
+
+  @include screen-medium-up {
+    @include typo-make-sizes($typo-paragraph-base-sizes);
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
   }
 }
 
 .preview__list-item.active {
   color: rgb($color-dark, 1);
-  transform: translate(15%);
+  transform: translateY(-30%);
   font-weight: 600;
+
+  @include screen-medium-up {
+    transform: translate(15%);
+  }
 }
 
 
