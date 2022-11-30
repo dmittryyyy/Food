@@ -34,7 +34,12 @@
 .offer__title {
   @include grid-columns-span((small: 4, medium: 7, large: 11));
   @include typo-make-sizes($typo-h2-sizes);
+  text-align: center;
   margin-bottom: 32px;
+
+  @include screen-medium-up {
+    text-align: left;
+  }
 }
 
 .offer__description {
@@ -88,7 +93,6 @@
   @include grid-with-inner-context {
     @include grid-columns-span((small: 4, medium: 8, large: 7));
   }
-
 }
 
 .offer__slider-counter-wrapper {
@@ -132,7 +136,7 @@
 }
 
 .offer__slide {
-  max-height: 280px;
+  max-height: 320px;
   transition: transform .8s ease-in-out;
 
   @include screen-medium-up {

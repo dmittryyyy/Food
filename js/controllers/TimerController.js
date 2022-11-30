@@ -2,9 +2,7 @@ import { Controller } from 'stimulus';
 
 export default class TimerController extends Controller {
   static targets = ['days', 'hours', 'minutes', 'seconds'];
-
-  deadline = new Date(2023, 12, 12);
-  timerId;
+  deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
 
   connect() {
     this.calculate();
@@ -18,14 +16,11 @@ export default class TimerController extends Controller {
   countTimer = () => {
     const diff = this.deadline - new Date();
 
-    if(diff <= 0) {
-      clearInterval(this.timerId);
-    }
-
     const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
     const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
     const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
     const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+
 
     this.daysTarget.textContent = days < 10 ? '0' + days : days;
     this.hoursTarget.textContent = hours < 10 ? '0' + hours : hours;

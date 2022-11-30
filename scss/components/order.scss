@@ -30,6 +30,7 @@
   @include grid-columns-span((small: 4, medium: 7, large: 10));
   @include typo-make-sizes($typo-h2-sizes);
   justify-self: center;
+  text-align: center;
   margin-bottom: 32px;
 }
 

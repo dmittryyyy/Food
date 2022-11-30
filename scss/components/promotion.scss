@@ -36,6 +36,11 @@
 .promotion__title {
   @include typo-make-sizes($typo-h2-sizes);
   margin-bottom: 32px;
+  text-align: center;
+
+  @include screen-medium-up {
+    text-align: left;
+  }
 }
 
 .promotion__description {
@@ -51,22 +56,27 @@
     @include grid-columns-span((small: 4, large: 6));
   }
   margin-bottom: 32px;
-
-  @include screen-medium-up {
-    justify-self: end;
-  }
 }
 
 .promotion__timer {
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @include screen-medium-up {
+    justify-content: left;
+  }
 }
 
 .promotion__timer-block {
   background: $color-white;
-  padding: 12px;
+  padding: 6px;
   text-align: center;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+
+  @include screen-small-up {
+    padding: 12px;
+  }
 
   @include screen-large-up {
     padding: 24px;
